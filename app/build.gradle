@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.example.jatayu_sih'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.jatayu_sih"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -22,9 +22,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    buildFeatures{
-        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

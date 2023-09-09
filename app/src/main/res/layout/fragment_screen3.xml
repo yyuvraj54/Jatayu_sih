@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".onboarding.screens.screen3">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/nwf" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/work_sans_bold"
+            android:gravity="center"
+            android:text="Always Ready"
+            android:textSize="24sp"
+            android:textFontWeight="700"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_marginTop="22dp"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/work_sans"
+            android:textSize="14sp"
+            android:textFontWeight="700"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="We understand that staying connected is crucial. That's why we've designed our app to work in both online and offline modes." />
+
+
+
+        <Button
+            android:id="@+id/thirdbtn"
+            android:background="@drawable/custombtn"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textFontWeight="500"
+            android:textSize="16sp"
+            android:fontFamily="@font/work_sans"
+            android:layout_height="wrap_content"
+            android:text="Get Started"/>
+    </LinearLayout>
+</LinearLayout>
