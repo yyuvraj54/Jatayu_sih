@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.jatayu_sih.databinding.ActivitySplashScreenBinding
+
 
 class SplashScreen : AppCompatActivity() {
 
@@ -18,12 +18,13 @@ class SplashScreen : AppCompatActivity() {
         }
         val thread = Thread {
             try {
-                Thread.sleep(4000)
+                Thread.sleep(2000)
             } catch (e: Exception) {
                 e.printStackTrace()
             } finally {
-                val intent = Intent(this@SplashScreen, Login::class.java)
+                val intent = Intent(this@SplashScreen, SplashActivity::class.java)
                 startActivity(intent)
+                finish()
             }
         }
         thread.start()

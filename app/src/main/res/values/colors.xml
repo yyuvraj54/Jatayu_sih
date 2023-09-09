@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="dot">#858585</color>
+    <color name="doselected">#120A8F</color>
+
+
 </resources>

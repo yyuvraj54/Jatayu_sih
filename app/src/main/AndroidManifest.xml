@@ -13,8 +13,11 @@
         android:theme="@style/Theme.Jatayu_sih"
         tools:targetApi="31">
         <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +29,17 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true"></activity>
+        <activity
+            android:name=".splashFragment"
+            android:label="Splash Activity">
 
+            <!-- Intent filters and other activity configuration, if needed -->
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

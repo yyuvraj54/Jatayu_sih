@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fontFamily="@font/work_sans"
+    android:orientation="vertical"
+    tools:context=".onboarding.screens.screen1">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/ghl" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/work_sans_bold"
+            android:gravity="center"
+            android:text="Get help"
+            android:textSize="24sp"
+            android:textFontWeight="700"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/work_sans"
+            android:textSize="14sp"
+            android:textFontWeight="700"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Stuck in an emergency or need any help dealing with the situation? Reach out to the authorities using emergency contacts for help." />
+
+
+
+        <Button
+            android:id="@+id/firstbtn"
+            android:background="@drawable/custombtn"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textFontWeight="500"
+            android:textSize="16sp"
+            android:fontFamily="@font/work_sans"
+            android:layout_height="wrap_content"
+            android:text="Next"/>
+    </LinearLayout>
+
+</LinearLayout>
