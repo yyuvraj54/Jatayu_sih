@@ -4,8 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
     android:orientation="vertical"
     tools:context=".Login">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:fontFamily="@font/work_sans"
+        android:textFontWeight="600"
+        android:layout_marginTop="30dp"
+        android:text="Login to your Account" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="Enter your credentials"
+        android:textFontWeight="500"
+        android:textSize="13sp"
+        tools:ignore="TextSizeCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Organisation ID"
+                android:textFontWeight="600"
+                android:textColor="@color/doselected"
+                android:textSize="13sp" />
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/work_sans"
+                android:textFontWeight="500"
+                android:background="@drawable/custom_entry"
+                android:hint="Please enter your OrgId"
+                android:inputType="text"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Person ID"
+                android:textFontWeight="600"
+                android:textColor="@color/doselected"
+                android:textSize="13sp" />
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/work_sans"
+                android:textFontWeight="500"
+                android:padding="5dp"
+                android:background="@drawable/custom_entry"
+                android:hint="Please enter your PersonId"
+                android:inputType="text"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/custombtn"
+            android:fontFamily="@font/work_sans"
+            android:backgroundTint="@color/doselected"
+            android:text="Login" />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
