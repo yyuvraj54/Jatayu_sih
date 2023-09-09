@@ -1,5 +1,7 @@
 package com.example.jatayu_sih
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -15,9 +17,25 @@ class splashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
+
+        if(onBoardingFinished()){
+            val intent = Intent(requireContext(), Login::class.java)
+            startActivity(intent)
+        }
+        else{
+            findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
+        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)
+    }
+
+
+    private fun onBoardingFinished():Boolean{
+        val sharedPref =requireActivity().getSharedPreferences ("onBoarding", Context.MODE_PRIVATE)
+
+        return sharedPref.getBoolean("Finished",false)
+
     }
 
 
