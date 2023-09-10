@@ -12,11 +12,24 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment" />
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
         android:name="com.example.jatayu_sih.onboarding.ViewPagerFragment"
         android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_login2"
+            app:destination="@id/login"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/login"
+        android:name="com.example.jatayu_sih.Login"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

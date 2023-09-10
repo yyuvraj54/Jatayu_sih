@@ -19,11 +19,15 @@ class splashFragment : Fragment() {
     ): View? {
 
         if(onBoardingFinished()){
-            val intent = Intent(requireContext(), Login::class.java)
+            val intent = Intent(requireContext(), SplashActivity::class.java)
             startActivity(intent)
+
+
         }
         else{
             findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
+
+
         }
 
         // Inflate the layout for this fragment
@@ -33,7 +37,6 @@ class splashFragment : Fragment() {
 
     private fun onBoardingFinished():Boolean{
         val sharedPref =requireActivity().getSharedPreferences ("onBoarding", Context.MODE_PRIVATE)
-
         return sharedPref.getBoolean("Finished",false)
 
     }
