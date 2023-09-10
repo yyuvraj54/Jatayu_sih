@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "271292034645",
+    "project_id": "jatayu-d482d",
+    "storage_bucket": "jatayu-d482d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271292034645:android:7683fb6e87d15fded2eedc",
+        "android_client_info": {
+          "package_name": "com.example.jatayu_sih"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQuz_Dt8-q5e5vHhADmdUntwYXudnQzn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
