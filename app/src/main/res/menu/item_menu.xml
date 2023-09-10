@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/operation_fragment"
+        android:title="Operation"
+        android:icon="@drawable/life"
+        />
+    <item android:id="@+id/notification_fragment"
+        android:title="Notification"
+        android:icon="@drawable/notifications_50"
+        />
+    <item android:id="@+id/logs_fragment"
+        android:title="Logs"
+        android:icon="@drawable/logs"
+        />
+    <item android:id="@+id/profile_fragment"
+        android:title="Profile"
+        android:icon="@drawable/person_4_24"
+        />
+</menu>

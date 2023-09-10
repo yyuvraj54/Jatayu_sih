@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_navigation"
+    app:startDestination="@id/operation_fragment">
+
+    <fragment
+        android:id="@+id/operation_fragment"
+        android:name="com.example.jatayu_sih.nav_fragment.operation_fragment"
+        android:label="fragment_operation_fragment"
+        tools:layout="@layout/fragment_operation_fragment" >
+        <action
+            android:id="@+id/action_operation_fragment_to_notification_fragment"
+            app:destination="@id/notification_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notification_fragment"
+        android:name="com.example.jatayu_sih.nav_fragment.notification_fragment"
+        android:label="fragment_notification_fragment"
+        tools:layout="@layout/fragment_notification_fragment" >
+        <action
+            android:id="@+id/action_notification_fragment_to_logs_fragment"
+            app:destination="@id/logs_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logs_fragment"
+        android:name="com.example.jatayu_sih.nav_fragment.logs_fragment"
+        android:label="fragment_logs_fragment"
+        tools:layout="@layout/fragment_logs_fragment" >
+        <action
+            android:id="@+id/action_logs_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.jatayu_sih.nav_fragment.profile_fragment"
+        android:label="fragment_profile_fragment"
+        tools:layout="@layout/fragment_profile_fragment" />
+</navigation>
