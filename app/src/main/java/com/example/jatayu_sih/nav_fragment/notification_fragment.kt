@@ -24,7 +24,7 @@ class notification_fragment : Fragment() {
         // Inflate the layout for this fragment
         var view= inflater.inflate(R.layout.fragment_notification_fragment, container, false)
 
-
+        
 //        noti_RecyclerView= view.findViewById(R.id.noti_recycle_view)
 //        noti_RecyclerView.layoutManager= LinearLayoutManager(requireContext())
 //        noti_RecyclerView.setHasFixedSize(true)
