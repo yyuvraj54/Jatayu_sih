@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".nav_fragment.logs_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/LogsFragment" />
-
+        tools:listitem="@layout/list_item"/>
 </FrameLayout>
