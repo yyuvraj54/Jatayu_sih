@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.jatayu_sih.R
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.SupportMapFragment
 
 class operation_fragment : Fragment() {
 
@@ -14,7 +16,15 @@ class operation_fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_operation_fragment, container, false)
+        val view=inflater.inflate(R.layout.fragment_operation_fragment, container, false)
+
+        val supportMapFragment=
+            childFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment
+
+        supportMapFragment.getMapAsync { googleMap: GoogleMap ->
+
+        }
+        return  view
     }
 
 }
