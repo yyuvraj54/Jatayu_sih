@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SessionViewActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvData"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineTop">
+
+        <TextView
+            android:id="@+id/tvSurvivers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Survivers : "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tvSurviversData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="87654"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tvInjured"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Injured : "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"/>
+
+        <TextView
+            android:id="@+id/tvInjuredData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23654"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="60dp"/>
+
+        <TextView
+            android:id="@+id/tvCasualities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Casualities : "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="110dp"/>
+
+        <TextView
+            android:id="@+id/tvCasualitiesData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="33654"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="110dp"/>
+
+        <TextView
+            android:id="@+id/tvSeverityLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Severity : "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="150dp"/>
+
+        <TextView
+            android:id="@+id/tvSeverityLevelData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="150dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOrgannisations"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/cvData">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <SearchView
+                android:id="@+id/SearchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/searchview_background"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="16dp"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+
+            </ListView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/imAddPhotos"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteY="509dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/imNeedMoreAssistance"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="509dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imAddPhotos"
+        app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <ImageButton
+        android:id="@+id/ibAddArea"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="509dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imNeedMoreAssistance"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

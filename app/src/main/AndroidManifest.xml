@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,9 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jatayu_sih"
         tools:targetApi="31">
+        <activity
+            android:name=".SessionViewActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBQuz_Dt8-q5e5vHhADmdUntwYXudnQzn4"/>
+            android:value="AIzaSyBQuz_Dt8-q5e5vHhADmdUntwYXudnQzn4" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="false" />
@@ -34,7 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".splashFragment"
             android:label="Splash Activity">

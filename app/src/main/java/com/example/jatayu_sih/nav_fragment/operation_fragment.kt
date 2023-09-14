@@ -1,11 +1,14 @@
 package com.example.jatayu_sih.nav_fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import com.example.jatayu_sih.R
+import com.example.jatayu_sih.SessionViewActivity
 import com.example.jatayu_sih.websocket.webSocketListener
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
@@ -37,6 +40,13 @@ class operation_fragment : Fragment() {
 
         val listener = webSocketListener()
         val ws :WebSocket = client.newWebSocket(request,listener)
+
+        //open sessions card view
+        val cardView=view.findViewById<CardView>(R.id.cvSessions)
+        cardView.setOnClickListener {
+            val intent= Intent(activity,SessionViewActivity::class.java)
+            startActivity(intent)
+        }
         return  view
     }
 
