@@ -26,6 +26,9 @@ class operation_fragment : Fragment() {
         // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_operation_fragment, container, false)
 
+
+
+
         val supportMapFragment= childFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment
         supportMapFragment.getMapAsync { googleMap: GoogleMap -> }
 
