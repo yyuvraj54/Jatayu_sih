@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/EditActivity"
+    tools:context=".EditDetailsActivity">
+
+    <TextView
+        android:id="@+id/tvSurvivers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="Survivers : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSurviversData"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
+
+    <EditText
+        android:id="@+id/tvSurviversData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="87654"
+        app:layout_constraintStart_toEndOf="@+id/tvSurvivers"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tvInjured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Injured : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvInjuredData"
+        app:layout_constraintStart_toStartOf="@+id/tvSurvivers" />
+
+    <EditText
+        android:id="@+id/tvInjuredData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="23654"
+        app:layout_constraintStart_toStartOf="@+id/tvSurviversData"
+        app:layout_constraintTop_toBottomOf="@+id/tvSurviversData"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvCasualities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Casualities : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvCasualitiesData"
+        app:layout_constraintStart_toStartOf="@+id/tvInjured" />
+
+    <EditText
+        android:id="@+id/tvCasualitiesData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="33654"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvInjuredData"
+        app:layout_constraintTop_toBottomOf="@+id/tvInjuredData" />
+
+    <TextView
+        android:id="@+id/tvSeverityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Severity : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSeverityLevelData"
+        app:layout_constraintStart_toStartOf="@+id/tvCasualities" />
+
+    <Spinner
+        android:id="@+id/tvSeverityLevelData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvCasualitiesData"
+        app:layout_constraintTop_toBottomOf="@+id/tvCasualitiesData" />
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Add"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeverityLevel"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

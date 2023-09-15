@@ -20,6 +20,7 @@ class SessionViewActivity : AppCompatActivity() {
     private lateinit var imageAdd: ImageButton
     private lateinit var floatingButton: FloatingActionButton
     private lateinit var uploadButton: Button
+    private lateinit var fbEditButton: FloatingActionButton
     var auth: FirebaseAuth?=null
     var database: FirebaseDatabase? = null
     var storage: FirebaseStorage? = null
@@ -38,8 +39,14 @@ class SessionViewActivity : AppCompatActivity() {
         imageAdd = findViewById(R.id.ibImage)
         floatingButton = findViewById(R.id.floatingActionButton)
         uploadButton = findViewById(R.id.btnUpload)
+        fbEditButton=findViewById(R.id.fbEdit)
 
         organisationId = intent.getStringExtra("organizationId")
+
+        fbEditButton.setOnClickListener {
+            val intent= Intent(this@SessionViewActivity,EditDetailsActivity::class.java)
+            startActivity(intent)
+        }
 
         floatingButton.setOnClickListener {
             ImagePicker.with(this)
@@ -47,6 +54,8 @@ class SessionViewActivity : AppCompatActivity() {
                 .maxResultSize(1080, 1080)
                 .start()
         }
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
