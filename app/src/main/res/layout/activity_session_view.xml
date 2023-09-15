@@ -133,42 +133,66 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageButton
-        android:id="@+id/imAddPhotos"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        tools:layout_editor_absoluteX="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        tools:layout_editor_absoluteY="509dp"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
-        tools:srcCompat="@tools:sample/avatars" />
+
 
     <ImageButton
-        android:id="@+id/imNeedMoreAssistance"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="509dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imAddPhotos"
+        android:id="@+id/ibImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/user"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginBottom="-5dp"
+        app:layout_constraintEnd_toEndOf="@+id/ibImage"
+        app:layout_constraintBottom_toBottomOf="@+id/ibImage"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="@+id/ibImage"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"/>
+
+
+    <ImageButton
+        android:id="@+id/ibNeedMoreAssistance"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/user"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/ibImage"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
+        android:layout_marginTop="10dp"/>
 
 
     <ImageButton
         android:id="@+id/ibAddArea"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="509dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imNeedMoreAssistance"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/user"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/ibNeedMoreAssistance"
+        android:layout_marginStart="10dp"
         app:layout_constraintTop_toBottomOf="@+id/cvOrgannisations"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginTop="10dp"/>
+
+
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeft"
