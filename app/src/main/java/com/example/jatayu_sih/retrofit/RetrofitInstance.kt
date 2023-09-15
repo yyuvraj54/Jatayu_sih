@@ -4,9 +4,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-class RetrofitInstance {
+object RetrofitInstance {
     private val retrofit by lazy {
-        Retrofit.Builder().baseUrl("       ").addConverterFactory(GsonConverterFactory.create())
+        Retrofit.Builder().baseUrl("https://jatayu.onrender.com/api/v1/").addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 

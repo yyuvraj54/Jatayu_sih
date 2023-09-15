@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
     android:orientation="vertical"
     tools:context=".Login">
 
@@ -32,6 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
@@ -47,13 +47,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Organisation ID"
+                android:text="Troop ID"
                 android:textFontWeight="600"
                 android:textColor="@color/doselected"
                 android:textSize="13sp" />
 
             <EditText
-                android:id="@+id/etOrganisationID"
+                android:id="@+id/etTroopID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -62,7 +62,7 @@
                 android:fontFamily="@font/work_sans"
                 android:textFontWeight="500"
                 android:background="@drawable/custom_entry"
-                android:hint="Please enter your OrgId"
+                android:hint="Please enter your Troop ID"
                 android:inputType="text"
                 android:minHeight="48dp" />
         </LinearLayout>
@@ -78,13 +78,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Troop ID"
+                android:text="Password"
                 android:textFontWeight="600"
                 android:textColor="@color/doselected"
                 android:textSize="13sp" />
 
             <EditText
-                android:id="@+id/etTroopId"
+                android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -93,8 +93,8 @@
                 android:textFontWeight="500"
                 android:padding="5dp"
                 android:background="@drawable/custom_entry"
-                android:hint="Please enter your TroopId"
-                android:inputType="text"
+                android:hint="Please enter your Password"
+                android:inputType="textPassword"
                 android:minHeight="48dp" />
         </LinearLayout>
 
@@ -110,6 +110,7 @@
 
 
     </LinearLayout>
+
 
 
 </LinearLayout>
