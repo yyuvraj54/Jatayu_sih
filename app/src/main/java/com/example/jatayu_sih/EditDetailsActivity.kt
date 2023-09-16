@@ -23,9 +23,10 @@ class EditDetailsActivity : AppCompatActivity() {
         etInjured=findViewById(R.id.etInjuredDataFill)
         etEstimatedAfectees=findViewById(R.id.etEstimatedAfffectiesDataFill)
         etCasualities=findViewById(R.id.etCasualitiesDataFill)
+        spinner=findViewById(R.id.etSeverityLevelDataFill)
         val spinnerSeverity=arrayOf("No Severity","0","1","2")
 
-        val arrayAdp= ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,spinnerSeverity)
+        val arrayAdp= ArrayAdapter(this@EditDetailsActivity,android.R.layout.simple_spinner_dropdown_item,spinnerSeverity)
         spinner.adapter=arrayAdp
 
     }
