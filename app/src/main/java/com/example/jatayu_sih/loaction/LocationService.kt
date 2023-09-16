@@ -4,11 +4,14 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.getIntent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.jatayu_sih.R
 import com.example.jatayu_sih.loaction.backgroundlocationtracking.DefaultLocationClient
 import com.google.android.gms.location.LocationServices
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -16,6 +19,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+
 
 class LocationService: Service() {
 
@@ -32,14 +36,16 @@ class LocationService: Service() {
         )
     }
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+
         when(intent?.action) {
-            ACTION_START -> start()
+            ACTION_START -> start(intent)
             ACTION_STOP -> stop()
+
         }
         return super.onStartCommand(intent, flags, startId)
     }
 
-    private fun start() {
+    private fun start(intent: Intent?) {
         val notification = NotificationCompat.Builder(this, "location")
             .setContentTitle("Tracking location...")
             .setContentText("Location: null")
@@ -48,11 +54,27 @@ class LocationService: Service() {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         locationClient
-            .getLocationUpdates(10000L)
+            .getLocationUpdates(100L)
             .catch { e -> e.printStackTrace() }
             .onEach { location ->
-                val lat = location.latitude.toString().takeLast(3)
-                val long = location.longitude.toString().takeLast(3)
+                val lat = location.latitude.toString()
+                val long = location.longitude.toString()
+
+
+                //---!>>>>>>>>
+                val database = FirebaseDatabase.getInstance()
+                val personDataRef: DatabaseReference = database.getReference("troops")
+
+                val personId = intent?.getStringExtra("troopId")
+                val personData = HashMap<String, Any>()
+                personData["lat"] = lat
+                personData["long"] = long
+                if (personId != null) {
+                    personDataRef.child(personId).setValue(personData)
+                }
+                //---!>>>>>>>>
+
+
                 val updatedNotification = notification.setContentText(
                     "Location: ($lat, $long)"
                 )
