@@ -15,14 +15,14 @@
         android:text="Survivers : "
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvSurviversData"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etSurviversDataFill"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
 
     <EditText
-        android:id="@+id/tvSurviversData"
+        android:id="@+id/etSurviversDataFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="10dp"
         android:text="87654"
         app:layout_constraintStart_toEndOf="@+id/tvSurvivers"
@@ -37,18 +37,38 @@
         android:text="Injured : "
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvInjuredData"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etInjuredDataFill"
         app:layout_constraintStart_toStartOf="@+id/tvSurvivers" />
 
     <EditText
-        android:id="@+id/tvInjuredData"
+        android:id="@+id/etInjuredDataFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="23654"
-        app:layout_constraintStart_toStartOf="@+id/tvSurviversData"
-        app:layout_constraintTop_toBottomOf="@+id/tvSurviversData"
+        app:layout_constraintStart_toStartOf="@+id/etSurviversDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etSurviversDataFill"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvEstimatedAfffecties"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estimated Afffecties : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etEstimatedAfffectiesDataFill"
+        app:layout_constraintStart_toStartOf="@+id/tvInjured" />
+
+    <EditText
+        android:id="@+id/etEstimatedAfffectiesDataFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="43654"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etInjuredDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etInjuredDataFill" />
 
     <TextView
         android:id="@+id/tvCasualities"
@@ -57,18 +77,18 @@
         android:text="Casualities : "
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvCasualitiesData"
-        app:layout_constraintStart_toStartOf="@+id/tvInjured" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/etCasualitiesDataFill"
+        app:layout_constraintStart_toStartOf="@+id/tvEstimatedAfffecties" />
 
     <EditText
-        android:id="@+id/tvCasualitiesData"
+        android:id="@+id/etCasualitiesDataFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="33654"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvInjuredData"
-        app:layout_constraintTop_toBottomOf="@+id/tvInjuredData" />
+        app:layout_constraintStart_toStartOf="@+id/etEstimatedAfffectiesDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etEstimatedAfffectiesDataFill" />
 
     <TextView
         android:id="@+id/tvSeverityLevel"
@@ -77,18 +97,18 @@
         android:text="Severity : "
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvSeverityLevelData"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etSeverityLevelDataFill"
         app:layout_constraintStart_toStartOf="@+id/tvCasualities" />
 
     <Spinner
-        android:id="@+id/tvSeverityLevelData"
+        android:id="@+id/etSeverityLevelDataFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="2"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvCasualitiesData"
-        app:layout_constraintTop_toBottomOf="@+id/tvCasualitiesData" />
+        app:layout_constraintStart_toStartOf="@+id/etCasualitiesDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etCasualitiesDataFill" />
 
 
     <Button

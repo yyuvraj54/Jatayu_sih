@@ -32,7 +32,7 @@
             android:text="87654"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="200dp"
             android:layout_marginTop="10dp"/>
 
         <TextView
@@ -52,8 +52,28 @@
             android:text="23654"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="200dp"
             android:layout_marginTop="60dp"/>
+
+        <TextView
+            android:id="@+id/tvEstimatedAfffecties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estimated Afffecties : "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="110dp"/>
+
+        <TextView
+            android:id="@+id/tvEstimatedAfffectiesData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="43654"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="110dp"/>
 
         <TextView
             android:id="@+id/tvCasualities"
@@ -63,7 +83,7 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="150dp"/>
 
         <TextView
             android:id="@+id/tvCasualitiesData"
@@ -72,8 +92,8 @@
             android:text="33654"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="150dp"/>
 
         <TextView
             android:id="@+id/tvSeverityLevel"
@@ -83,7 +103,7 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="150dp"/>
+            android:layout_marginTop="190dp"/>
 
         <TextView
             android:id="@+id/tvSeverityLevelData"
@@ -93,8 +113,8 @@
             android:layout_marginBottom="10dp"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="150dp"/>
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="190dp"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fbEdit"
