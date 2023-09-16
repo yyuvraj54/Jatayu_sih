@@ -22,6 +22,7 @@ class SessionViewActivity : AppCompatActivity() {
     private lateinit var uploadButton: Button
     private lateinit var fbEditButton: FloatingActionButton
     private lateinit var ibNeedMoreAssistance:ImageButton
+    private lateinit var ibAddArea:ImageButton
 
 
     var auth: FirebaseAuth?=null
@@ -44,6 +45,7 @@ class SessionViewActivity : AppCompatActivity() {
         uploadButton = findViewById(R.id.btnUpload)
         fbEditButton=findViewById(R.id.fbEdit)
         ibNeedMoreAssistance=findViewById(R.id.ibNeedMoreAssistance)
+        ibAddArea=findViewById(R.id.ibAddArea)
 
         organisationId = intent.getStringExtra("organizationId")
 
@@ -54,6 +56,10 @@ class SessionViewActivity : AppCompatActivity() {
 
         ibNeedMoreAssistance.setOnClickListener {
             val intent=Intent(this@SessionViewActivity,NeedMoreAssistance::class.java)
+            startActivity(intent)
+        }
+        ibAddArea.setOnClickListener {
+            val intent=Intent(this@SessionViewActivity,AddArea::class.java)
             startActivity(intent)
         }
 
