@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/EditActivity"
+    tools:context=".EditDetailsActivity">
+
+    <TextView
+        android:id="@+id/tvSurvivers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="Survivers : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etSurviversDataFill"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
+
+    <EditText
+        android:id="@+id/etSurviversDataFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="10dp"
+        android:text="87654"
+        app:layout_constraintStart_toEndOf="@+id/tvSurvivers"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tvInjured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Injured : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etInjuredDataFill"
+        app:layout_constraintStart_toStartOf="@+id/tvSurvivers" />
+
+    <EditText
+        android:id="@+id/etInjuredDataFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="23654"
+        app:layout_constraintStart_toStartOf="@+id/etSurviversDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etSurviversDataFill"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvEstimatedAfffecties"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estimated Afffecties : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etEstimatedAfffectiesDataFill"
+        app:layout_constraintStart_toStartOf="@+id/tvInjured" />
+
+    <EditText
+        android:id="@+id/etEstimatedAfffectiesDataFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="43654"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etInjuredDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etInjuredDataFill" />
+
+    <TextView
+        android:id="@+id/tvCasualities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Casualities : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etCasualitiesDataFill"
+        app:layout_constraintStart_toStartOf="@+id/tvEstimatedAfffecties" />
+
+    <EditText
+        android:id="@+id/etCasualitiesDataFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="33654"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etEstimatedAfffectiesDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etEstimatedAfffectiesDataFill" />
+
+    <TextView
+        android:id="@+id/tvSeverityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Severity : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etSeverityLevelDataFill"
+        app:layout_constraintStart_toStartOf="@+id/tvCasualities" />
+
+    <Spinner
+        android:id="@+id/etSeverityLevelDataFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/etCasualitiesDataFill"
+        app:layout_constraintTop_toBottomOf="@+id/etCasualitiesDataFill" />
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Add"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeverityLevel"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
