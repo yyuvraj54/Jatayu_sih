@@ -24,8 +24,6 @@ class profile_fragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile_fragment, container, false)
 
 
-        val start=view.findViewById<Button>(R.id.loc_start)
-        val stop=view.findViewById<Button>(R.id.loc_stop)
         val logout=view.findViewById<Button>(R.id.btnLogOut)
 
         logout.setOnClickListener {
@@ -37,23 +35,7 @@ class profile_fragment : Fragment() {
 
         }
 
-        start.setOnClickListener {
-            val intent=Intent(requireContext(), LocationService::class.java).apply { action = LocationService.ACTION_START }
-            intent.putExtra("troopId", "33543535")
-            requireContext().startService(intent)
 
-        }
-
-
-        stop.setOnClickListener {
-            val intent=Intent(requireContext(), LocationService::class.java).apply {
-                action = LocationService.ACTION_STOP
-
-            }
-            intent.putExtra("troopId", "33543535")
-            requireContext().startService(intent)
-
-        }
 
 
 

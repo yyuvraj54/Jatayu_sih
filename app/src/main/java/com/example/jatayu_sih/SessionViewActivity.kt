@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import com.example.jatayu_sih.loaction.LocationService
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +25,7 @@ class SessionViewActivity : AppCompatActivity() {
     private lateinit var fbEditButton: FloatingActionButton
     private lateinit var ibNeedMoreAssistance:ImageButton
     private lateinit var ibAddArea:ImageButton
+    private lateinit var prefs: loginStatus
 
 
     var auth: FirebaseAuth?=null
@@ -33,6 +36,16 @@ class SessionViewActivity : AppCompatActivity() {
     var image:String?=null
     private var organisationId: String? = null
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        prefs = loginStatus(this@SessionViewActivity)
+        val userId = prefs.userId
+        val intent=Intent(this@SessionViewActivity, LocationService::class.java).apply { action = LocationService.ACTION_STOP }
+        intent.putExtra("troopId", "${userId}")
+        startService(intent)
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_session_view)
