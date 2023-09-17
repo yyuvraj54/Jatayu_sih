@@ -1,5 +1,6 @@
 package com.example.jatayu_sih.nav_fragment
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -31,6 +32,7 @@ class logs_fragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_logs_fragment, container, false)
+
 
 
 //        newRecyclerView= view.findViewById(R.id.recview)

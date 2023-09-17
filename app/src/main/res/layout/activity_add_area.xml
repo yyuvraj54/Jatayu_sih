@@ -11,12 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add more affected area"
-        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvAddSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter required details to add more affected area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdd"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:textColor="#999EA1"
+        android:textSize="15sp"
         android:textStyle="bold"/>
 
     <TextView
@@ -27,7 +41,7 @@
         android:text="Latitude: "
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/tvAdd"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddSub"
         app:layout_constraintBaseline_toBaselineOf="@+id/etLocationLatitude"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -38,8 +52,12 @@
         android:hint="latitude"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvLocationLongitude"
-        app:layout_constraintTop_toBottomOf="@+id/tvAdd" />
+        android:layout_marginStart="40dp"
+        android:background="@drawable/item_edit_background"
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/tvLocationLatitude"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddSub" />
 
     <TextView
         android:id="@+id/tvLocationLongitude"
@@ -56,9 +74,10 @@
         android:id="@+id/etLocationLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:hint="Longitude"
+        android:background="@drawable/item_edit_background"
+        android:padding="10dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvLocationLongitude"
@@ -80,21 +99,25 @@
         android:id="@+id/etSeverity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:hint="severity"
+        android:background="@drawable/item_edit_background"
+        android:padding="10dp"
+        android:layout_marginStart="40dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvSeverity1"
         app:layout_constraintTop_toBottomOf="@+id/tvLocationLongitude" />
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSendArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Send"
+        app:cornerRadius="4dp"
+        android:backgroundTint="@color/primary_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSeverity1" />

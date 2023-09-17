@@ -10,7 +10,7 @@
         android:id="@+id/profileimg"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:src="@drawable/profiletroop"
+        android:src="@drawable/img_21"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
@@ -22,10 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Organisation ID : "
-        app:layout_constraintStart_toStartOf="@+id/profileimg"
+        android:layout_marginStart="60dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/profileimg"
         android:layout_marginTop="60dp"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
 
@@ -34,6 +35,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/tvOrganisationtext"
         android:hint="1234"
+        android:textSize="20sp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
         android:textColor="@color/black"
@@ -44,10 +46,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Troop ID : "
-        app:layout_constraintStart_toStartOf="@+id/profileimg"
+        android:layout_marginStart="60dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/tvOrganisationtext"
         android:layout_marginTop="20dp"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
@@ -55,17 +58,20 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/tvOrganisationtext"
         android:hint="1234"
+        android:textSize="20sp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvOrganisationtext"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/guidelineLeft"
         android:text="Log Out"
+        app:cornerRadius="4dp"
+        android:backgroundTint="@color/primary_color"
         app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintTop_toBottomOf="@+id/tvTrooptext" />

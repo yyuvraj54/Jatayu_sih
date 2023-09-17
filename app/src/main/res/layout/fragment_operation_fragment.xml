@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".nav_fragment.operation_fragment">
 
@@ -15,7 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
         android:fontFamily="@font/inter"
         android:text="There is no new session!" />
 
@@ -26,15 +29,16 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
-        android:textColor="@color/dot"
+        android:layout_marginStart="20dp"
+        android:textColor="#999EA1"
         android:fontFamily="@font/inter"
-        android:textSize="12sp"
+        android:textSize="15sp"
         android:text="Tap on new session button to create a session" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
         android:layout_margin="20dp"
         android:layout_gravity="center"
         android:src="@drawable/_5" />
@@ -42,7 +46,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content" >
 
         <LinearLayout
@@ -60,6 +64,7 @@
                 android:layout_marginTop="284dp"
                 android:gravity="center"
                 android:text="Sessions"
+                android:textColor="@color/black"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -70,31 +75,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter"
-                android:textSize="15sp"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
                 android:textStyle="bold"
-                android:text="teamId: 6503559a493fe195aaa42e18"/>
+                android:text="teamId:  6503559a493fe195aaa42e18"/>
 
             <TextView
                 android:id="@+id/createdat"
                 android:fontFamily="@font/inter"
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="createdAt: 2023-09-16T22:14:33.554Z" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/notifyOrgbtn"
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Notify Organisation"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/primary_color"
+        android:text="Notify  Organisation"
+        android:padding="15dp"
+        app:cornerRadius="4dp"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />

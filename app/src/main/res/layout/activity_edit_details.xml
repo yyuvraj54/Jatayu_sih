@@ -8,25 +8,39 @@
     tools:context=".EditDetailsActivity">
 
     <TextView
+        android:id="@+id/tvEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit session details"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"/>
+    <TextView
         android:id="@+id/tvSurvivers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:text="Survivers : "
         android:textSize="16sp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/etSurviversDataFill"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
 
     <EditText
         android:id="@+id/etSurviversDataFill"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:text="87654"
+        android:padding="10dp"
+        android:background="@drawable/item_edit_background"
         app:layout_constraintStart_toEndOf="@+id/tvSurvivers"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        app:layout_constraintTop_toBottomOf="@+id/tvEdit"
         android:textSize="16sp"
         />
 
@@ -42,10 +56,12 @@
 
     <EditText
         android:id="@+id/etInjuredDataFill"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="23654"
+        android:padding="10dp"
+        android:background="@drawable/item_edit_background"
         app:layout_constraintStart_toStartOf="@+id/etSurviversDataFill"
         app:layout_constraintTop_toBottomOf="@+id/etSurviversDataFill"
         android:textSize="16sp" />
@@ -62,10 +78,12 @@
 
     <EditText
         android:id="@+id/etEstimatedAfffectiesDataFill"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="43654"
+        android:padding="10dp"
+        android:background="@drawable/item_edit_background"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/etInjuredDataFill"
         app:layout_constraintTop_toBottomOf="@+id/etInjuredDataFill" />
@@ -82,11 +100,13 @@
 
     <EditText
         android:id="@+id/etCasualitiesDataFill"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="33654"
         android:textSize="16sp"
+        android:padding="10dp"
+        android:background="@drawable/item_edit_background"
         app:layout_constraintStart_toStartOf="@+id/etEstimatedAfffectiesDataFill"
         app:layout_constraintTop_toBottomOf="@+id/etEstimatedAfffectiesDataFill" />
 
@@ -107,16 +127,20 @@
         android:layout_marginTop="20dp"
         android:text="2"
         android:textSize="16sp"
+        android:padding="10dp"
+        android:background="@drawable/item_edit_background"
         app:layout_constraintStart_toStartOf="@+id/etCasualitiesDataFill"
         app:layout_constraintTop_toBottomOf="@+id/etCasualitiesDataFill" />
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Add"
+        app:cornerRadius="4dp"
+        android:backgroundTint="@color/primary_color"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
         app:layout_constraintTop_toBottomOf="@+id/tvSeverityLevel"/>

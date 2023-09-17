@@ -2,14 +2,22 @@ package com.example.jatayu_sih
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.jatayu_sih.loaction.LocationService
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -21,7 +29,7 @@ import java.util.Locale
 class SessionViewActivity : AppCompatActivity() {
     private lateinit var imageAdd: ImageButton
     private lateinit var floatingButton: FloatingActionButton
-    private lateinit var uploadButton: Button
+    private lateinit var uploadButton: TextView
     private lateinit var fbEditButton: FloatingActionButton
     private lateinit var ibNeedMoreAssistance:ImageButton
     private lateinit var ibAddArea:ImageButton
@@ -46,9 +54,15 @@ class SessionViewActivity : AppCompatActivity() {
         startService(intent)
 
     }
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.activity_session_view)
+        // Hide the status bar
+        window.insetsController?.hide(WindowInsets.Type.statusBars())
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
         storage = FirebaseStorage.getInstance()
@@ -62,11 +76,22 @@ class SessionViewActivity : AppCompatActivity() {
 
         organisationId = intent.getStringExtra("organizationId")
 
+
         fbEditButton.setOnClickListener {
             val intent= Intent(this@SessionViewActivity,EditDetailsActivity::class.java)
             startActivity(intent)
         }
 
+        window.decorView.systemUiVisibility= View.SYSTEM_UI_FLAG_FULLSCREEN
+        supportActionBar?.hide()
+        val supportMapFragment =
+            supportFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment
+
+        supportMapFragment.getMapAsync { googleMap: GoogleMap ->
+
+            // You can add your Google Map customization code here
+
+        }
         ibNeedMoreAssistance.setOnClickListener {
             val intent=Intent(this@SessionViewActivity,NeedMoreAssistance::class.java)
             startActivity(intent)
