@@ -26,6 +26,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.jatayu_sih.apiModelCall.ResponseData
 import com.example.jatayu_sih.apiModelCall.SessionResponse
+import com.example.jatayu_sih.loaction.LocationService
 import com.example.jatayu_sih.retrofit.RetrofitInstance
 import com.example.jatayu_sih.websocket.SocketHandler
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -80,7 +81,7 @@ class operation_fragment : Fragment() {
 
         prefs = loginStatus(requireContext())
         //val isLoggedIn = prefs.isLoggedIn
-        //val userId = prefs.userId
+        val userId = prefs.userId
         val username = prefs.username.toString()
         val password = prefs.password.toString()
         val token = prefs.token.toString()
@@ -155,7 +156,13 @@ class operation_fragment : Fragment() {
         val textview=view.findViewById<TextView>(R.id.textView3)
         textview.setOnClickListener {
             val intent= Intent(activity,SessionViewActivity::class.java)
+            val intents=Intent(requireContext(), LocationService::class.java).apply {
+                action = LocationService.ACTION_START
+            }
+            intents.putExtra("troopId", "${userId}")
+            requireContext().startService(intents)
             startActivity(intent)
+
         }
 
 
