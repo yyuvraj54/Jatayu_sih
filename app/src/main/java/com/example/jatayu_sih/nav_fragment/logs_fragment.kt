@@ -33,50 +33,50 @@ class logs_fragment : Fragment() {
         val view= inflater.inflate(R.layout.fragment_logs_fragment, container, false)
 
 
-        newRecyclerView= view.findViewById(R.id.recview)
-        newRecyclerView.layoutManager= LinearLayoutManager(requireContext())
-        newRecyclerView.setHasFixedSize(true)
-
-        newArrayList= arrayListOf<Sessions>()
-        prefs = loginStatus(requireContext())
-        val team = prefs.team.toString()
-
-        RetrofitInstance.apiInterface.getSessionsByTeamId(team)?.enqueue(object :
-            Callback<SessionResponse> {
-            override fun onResponse(call: Call<SessionResponse>, response: Response<SessionResponse>) {
-                if (response.isSuccessful) {
-                    val sessionResponse = response.body()
-                    if (sessionResponse?.status == "success") {
-                        val sessionIds: List<String> = sessionResponse.data.sessions.map { it._id }
-
-
-                        getUserData(sessionIds)
-
-                    } else {
-                        Toast.makeText(requireContext(),"No Active Session right now ", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    // Handle non-200 response
-                }
-            }
-
-            override fun onFailure(call: Call<SessionResponse>, t: Throwable) {
-                Toast.makeText(requireContext(),"Backend glitch", Toast.LENGTH_SHORT).show()
-            }
-        })
-
-
-
-
+//        newRecyclerView= view.findViewById(R.id.recview)
+//        newRecyclerView.layoutManager= LinearLayoutManager(requireContext())
+//        newRecyclerView.setHasFixedSize(true)
+//
+//        newArrayList= arrayListOf<Sessions>()
+//        prefs = loginStatus(requireContext())
+//        val team = prefs.team.toString()
+//
+//        RetrofitInstance.apiInterface.getSessionsByTeamId(team)?.enqueue(object :
+//            Callback<SessionResponse> {
+//            override fun onResponse(call: Call<SessionResponse>, response: Response<SessionResponse>) {
+//                if (response.isSuccessful) {
+//                    val sessionResponse = response.body()
+//                    if (sessionResponse?.status == "success") {
+//                        val sessionIds: List<String> = sessionResponse.data.sessions.map { it._id }
+//
+//
+//                        getUserData(sessionIds)
+//
+//                    } else {
+//                        Toast.makeText(requireContext(),"No Active Session right now ", Toast.LENGTH_SHORT).show()
+//                    }
+//                } else {
+//                    // Handle non-200 response
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<SessionResponse>, t: Throwable) {
+//                Toast.makeText(requireContext(),"Backend glitch", Toast.LENGTH_SHORT).show()
+//            }
+//        })
+//
+//
+//
+//
         return view
     }
-
-    private fun getUserData(sessionIds:List<String>){
-        for (sessionId in sessionIds) {
-            val sessions = Sessions(sessionId)
-            Log.d("session List -->",sessions.toString())
-            newArrayList.add(sessions)
-        }
-        newRecyclerView.adapter = Myadapter(newArrayList)
-    }
+//
+//    private fun getUserData(sessionIds:List<String>){
+//        for (sessionId in sessionIds) {
+//            val sessions = Sessions(sessionId)
+//            Log.d("session List -->",sessions.toString())
+//            newArrayList.add(sessions)
+//        }
+//        newRecyclerView.adapter = Myadapter(newArrayList)
+//    }
 }
