@@ -3,18 +3,17 @@
 
     <item android:id="@+id/operation_fragment"
         android:title="Operation"
-        android:icon="@drawable/life"
-        />
+        android:icon="@drawable/img_4" />
     <item android:id="@+id/notification_fragment"
         android:title="Notification"
-        android:icon="@drawable/notifications_50"
+        android:icon="@drawable/img_5"
         />
     <item android:id="@+id/logs_fragment"
         android:title="Logs"
-        android:icon="@drawable/logs"
+        android:icon="@drawable/img_7"
         />
     <item android:id="@+id/profile_fragment"
         android:title="Profile"
-        android:icon="@drawable/person_4_24"
+        android:icon="@drawable/img_8"
         />
 </menu>

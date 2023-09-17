@@ -6,12 +6,13 @@
     <color name="dot">#858585</color>
     <color name="doselected">#120A8F</color>
 
-    sources>
-    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_200">#4763E4</color>
     <color name="purple_500">#45529E</color>
     <color name="purple_700">#45529E</color>
     <color name="teal_200">#45529E</color>
     <color name="teal_700">#FF018786</color>
+
+    <color name="primary_color">#4763E4</color>
 
 
 </resources>

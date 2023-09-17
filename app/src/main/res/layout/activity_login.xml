@@ -1,70 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Login">
 
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_10"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/work_sans"
+        android:text="Hi, Welcome Back!👋"
+        android:textColor="@color/black"
         android:textFontWeight="600"
-        android:layout_marginTop="30dp"
-        android:text="Login to your Account" />
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/iv"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/inter"
         android:text="Enter your credentials"
+        android:textColor="#999EA1"
         android:textFontWeight="500"
-        android:textSize="13sp"
-        tools:ignore="TextSizeCheck" />
+        android:textSize="16sp"
+        tools:ignore="TextSizeCheck"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"/>
 
     <LinearLayout
+        android:id="@+id/Linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Troop ID"
+                android:textColor="#4763e4"
                 android:textFontWeight="600"
-                android:textColor="@color/doselected"
-                android:textSize="13sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/etTroopID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:padding="5dp"
                 android:layout_margin="5dp"
-                android:fontFamily="@font/work_sans"
-                android:textFontWeight="500"
                 android:background="@drawable/custom_entry"
+                android:ems="10"
+                android:fontFamily="@font/work_sans"
                 android:hint="Please enter your Troop ID"
                 android:inputType="text"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:padding="5dp"
+                android:textFontWeight="500" />
         </LinearLayout>
 
 
@@ -79,38 +98,71 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Password"
+                android:textColor="#4763E4"
                 android:textFontWeight="600"
-                android:textColor="@color/doselected"
-                android:textSize="13sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:layout_margin="5dp"
-                android:fontFamily="@font/work_sans"
-                android:textFontWeight="500"
-                android:padding="5dp"
                 android:background="@drawable/custom_entry"
+                android:ems="10"
+                android:fontFamily="@font/work_sans"
                 android:hint="Please enter your Password"
                 android:inputType="textPassword"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:padding="5dp"
+                android:textFontWeight="500" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/loginbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/custombtn"
-            android:fontFamily="@font/work_sans"
-            android:backgroundTint="@color/doselected"
-            android:text="Login" />
 
 
     </LinearLayout>
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbtn"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="#4763E4"
+        android:fontFamily="@font/work_sans"
+        android:padding="10dp"
+        android:text="Log in"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBottom"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRight"/>
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

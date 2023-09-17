@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
     tools:context=".SplashScreen">
 
     <ImageView
-        android:id="@+id/splashimage"
+        android:id="@+id/splashImage"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/img"
+        android:src="@drawable/img_1"
         app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintStart_toEndOf="@+id/guidelineLeft"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
