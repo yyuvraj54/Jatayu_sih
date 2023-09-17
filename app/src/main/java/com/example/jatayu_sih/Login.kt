@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Organization
 import android.util.Log
 import android.widget.Toast
 import com.example.jatayu_sih.apiModelCall.UserLogin
@@ -77,9 +78,11 @@ class Login : AppCompatActivity() {
                                 val user = gotResponse.data.user
                                 val userId = user._id
                                 val userRole = user.role
+                                val team=user.team
+                                val organization=user.organisation
 
                                 if(status=="success"){
-                                    onLoginSuccess(troopId,password,status,token,userId,userRole)
+                                    onLoginSuccess(troopId,password,status,token,userId,userRole,team,organization)
                                 }
                                 else{
                                     Toast.makeText(this@Login, "Wrong username or Password", Toast.LENGTH_LONG).show()
@@ -108,7 +111,7 @@ class Login : AppCompatActivity() {
     }
 
 
-    private fun onLoginSuccess(username: String, password: String,  status: String, token: String, userId: String, userRole: String) {
+    private fun onLoginSuccess(username: String, password: String,  status: String, token: String, userId: String, userRole: String, team: String,organization:  String) {
         prefs.username = username
         prefs.password = password
         prefs.isLoggedIn = true
@@ -117,6 +120,9 @@ class Login : AppCompatActivity() {
         prefs.token = token
         prefs.userId = userId
         prefs.userRole =userRole
+        prefs.team =team
+        prefs.organisation =organization
+
 
         // Navigate to the main part of the app
         Toast.makeText(this@Login, "Login Successful", Toast.LENGTH_LONG).show()

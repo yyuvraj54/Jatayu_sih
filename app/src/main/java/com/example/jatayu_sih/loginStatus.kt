@@ -13,8 +13,20 @@ class loginStatus (context: Context) {
     private val KEY_TOKEN = "token"
     private val KEY_USER_ID = "userId"
     private val KEY_USER_ROLE = "userRole"
+    private val KEY_TEAM = "team"
+    private val KEY_ORGANISATION = "organisation"
+
 
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+
+    var team: String?
+        get() = sharedPreferences.getString(KEY_TEAM, null)
+        set(value) = sharedPreferences.edit().putString(KEY_TEAM, value).apply()
+
+    var organisation: String?
+        get() = sharedPreferences.getString(KEY_ORGANISATION, null)
+        set(value) = sharedPreferences.edit().putString(KEY_ORGANISATION, value).apply()
 
     var username: String?
         get() = sharedPreferences.getString(KEY_USERNAME, null)
