@@ -67,6 +67,9 @@ class operation_fragment : Fragment() {
         val notifybtn= view.findViewById<Button>(R.id.notifyOrgbtn)
 
 
+        val teamidtext=view.findViewById<TextView>(R.id.teamid)
+        val createftext=view.findViewById<TextView>(R.id.createdat)
+
 //
 //        val supportMapFragment= childFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment
 //        supportMapFragment.getMapAsync { googleMap: GoogleMap -> }
@@ -122,8 +125,9 @@ class operation_fragment : Fragment() {
 
                         val createdAt = responseData.data.request.createdAt
                         val teamId = responseData.data.request.teamId
-                        Log.d("SocketIO", "createdAt: $createdAt")
-                        Log.d("SocketIO", "teamId: $teamId")
+                        teamidtext.text="teamId: "+teamId
+                        createftext.text="createdAt: "+createdAt
+
                     }
                 })
 
