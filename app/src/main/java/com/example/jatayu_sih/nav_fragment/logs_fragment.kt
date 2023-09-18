@@ -1,5 +1,6 @@
 package com.example.jatayu_sih.nav_fragment
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -7,10 +8,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jatayu_sih.Login
 import com.example.jatayu_sih.R
+import com.example.jatayu_sih.SessionViewActivity
 import com.example.jatayu_sih.adapter.Myadapter
 import com.example.jatayu_sih.apiModelCall.SessionResponse
 import com.example.jatayu_sih.dataClass.Sessions
@@ -34,6 +39,13 @@ class logs_fragment : Fragment() {
         val view= inflater.inflate(R.layout.fragment_logs_fragment, container, false)
 
 
+        val lv1=view.findViewById<LinearLayout>(R.id.lv1)
+
+        lv1.setOnClickListener {
+            val intent= Intent(requireContext(), SessionViewActivity::class.java)
+            startActivity(intent)
+
+        }
 
 //        newRecyclerView= view.findViewById(R.id.recview)
 //        newRecyclerView.layoutManager= LinearLayoutManager(requireContext())

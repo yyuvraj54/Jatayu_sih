@@ -1,5 +1,6 @@
 package com.example.jatayu_sih
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,6 +22,12 @@ class NeedMoreAssistance : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_need_more_assistance)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.statusBarColor = resources.getColor(R.color.white, theme)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = resources.getColor(R.color.white)
+        }
         userList = ArrayList()
         addsBtn = findViewById(R.id.addingBtn)
         sendBtn=findViewById(R.id.btnSend)

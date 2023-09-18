@@ -1,11 +1,14 @@
 package com.example.jatayu_sih
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageButton
@@ -13,11 +16,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.jatayu_sih.loaction.LocationService
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -34,6 +43,8 @@ class SessionViewActivity : AppCompatActivity() {
     private lateinit var ibNeedMoreAssistance:ImageButton
     private lateinit var ibAddArea:ImageButton
     private lateinit var prefs: loginStatus
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var googleMap: GoogleMap
 
 
     var auth: FirebaseAuth?=null
@@ -60,8 +71,26 @@ class SessionViewActivity : AppCompatActivity() {
 
 
         setContentView(R.layout.activity_session_view)
+//        // Hide the status bar
+//        window.insetsController?.hide(WindowInsets.Type.statusBars())
+
         // Hide the status bar
         window.insetsController?.hide(WindowInsets.Type.statusBars())
+
+        // Hide the status bar and make your app full-screen
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val controller = window.insetsController
+            controller?.hide(WindowInsets.Type.statusBars())
+            controller?.systemBarsBehavior =
+                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        } else {
+            @Suppress("DEPRECATION")
+            window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_FULLSCREEN
+                            or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    )
+        }
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -75,7 +104,8 @@ class SessionViewActivity : AppCompatActivity() {
         ibAddArea=findViewById(R.id.ibAddArea)
 
         organisationId = intent.getStringExtra("organizationId")
-
+        // Initialize FusedLocationProviderClient
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
         fbEditButton.setOnClickListener {
             val intent= Intent(this@SessionViewActivity,EditDetailsActivity::class.java)
@@ -87,10 +117,40 @@ class SessionViewActivity : AppCompatActivity() {
         val supportMapFragment =
             supportFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment
 
-        supportMapFragment.getMapAsync { googleMap: GoogleMap ->
+        supportMapFragment.getMapAsync { map->
 
             // You can add your Google Map customization code here
 
+            googleMap = map
+
+            // Check for location permission
+            if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                // Permission is granted, enable the location layer
+                googleMap.isMyLocationEnabled = true
+
+                // Get the user's current location
+                fusedLocationProviderClient.lastLocation.addOnSuccessListener { location: Location? ->
+                    if (location != null) {
+                        val currentLatLng = LatLng(location.latitude, location.longitude)
+
+                        // Add a marker at the current location
+                        val markerOptions = MarkerOptions()
+                            .position(currentLatLng)
+                            .title("Current Location")
+                        googleMap.addMarker(markerOptions)
+
+                        // Move the camera to the current location
+                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
+                    }
+                }
+            } else {
+                // Request location permission if not granted
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                    LOCATION_PERMISSION_REQUEST_CODE
+                )
+            }
         }
         ibNeedMoreAssistance.setOnClickListener {
             val intent=Intent(this@SessionViewActivity,NeedMoreAssistance::class.java)
@@ -107,9 +167,14 @@ class SessionViewActivity : AppCompatActivity() {
                 .maxResultSize(1080, 1080)
                 .start()
         }
-
+        // Hide the status bar and enable full-screen mode
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
     }
+    companion object {
+        private const val LOCATION_PERMISSION_REQUEST_CODE = 1001
+    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -170,4 +235,5 @@ class SessionViewActivity : AppCompatActivity() {
             }
         }
     }
+
 }

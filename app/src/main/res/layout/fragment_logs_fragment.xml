@@ -15,10 +15,10 @@
           android:id="@+id/tvLogs"
          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="40dp"
+          android:layout_marginTop="20dp"
           android:textStyle="bold"
           android:textColor="@color/black"
-          android:textSize="20sp"
+          android:textSize="23sp"
           android:layout_marginStart="20dp"
           app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +36,11 @@
             app:layout_constraintEnd_toStartOf="parent">
 
             <LinearLayout
+                android:id="@+id/lv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#7CA67D"
+                android:elevation="4dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -88,7 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="17-9-2023"
+                        android:text="18-9-2023"
                         android:textAlignment="center"
                         android:textSize="15sp" />
 
@@ -320,7 +323,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Active"
+                        android:text="Inactive"
                         android:layout_marginBottom="20dp"
                         android:textAlignment="center"
                         android:textSize="15sp" />
@@ -396,7 +399,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="17-9-2023"
+                        android:text="16-9-2023"
                         android:textAlignment="center"
                         android:textSize="15sp" />
 
@@ -448,7 +451,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="20-9-2023"
+                        android:text="15-9-2023"
                         android:textAlignment="center"
                         android:textSize="15sp" />
 
@@ -474,7 +477,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Active"
+                        android:text="Inactive"
                         android:layout_marginBottom="20dp"
                         android:textAlignment="center"
                         android:textSize="15sp" />
@@ -551,7 +554,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="17-9-2023"
+                        android:text="15-9-2023"
                         android:textAlignment="center"
                         android:textSize="15sp" />
 
@@ -603,7 +606,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="20-9-2023"
+                        android:text="15-9-2023"
                         android:textAlignment="center"
                         android:textSize="15sp" />
 
@@ -629,7 +632,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Active"
+                        android:text="Inactive"
                         android:layout_marginBottom="20dp"
                         android:textAlignment="center"
                         android:textSize="15sp" />
@@ -783,7 +786,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Active"
+                        android:text="Inactive"
                         android:layout_marginBottom="20dp"
                         android:textAlignment="center"
                         android:textSize="15sp" />

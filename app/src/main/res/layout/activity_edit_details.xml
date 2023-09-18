@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/EditActivity"
+    android:background="@color/white"
     tools:context=".EditDetailsActivity">
 
     <TextView
@@ -14,7 +15,7 @@
         android:text="Edit session details"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
-        android:textSize="18sp"
+        android:textSize="23sp"
         android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toTopOf="@+id/guidelineTop"/>
@@ -122,10 +123,11 @@
 
     <Spinner
         android:id="@+id/etSeverityLevelDataFill"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="2"
+        android:textAlignment="center"
         android:textSize="16sp"
         android:padding="10dp"
         android:background="@drawable/item_edit_background"

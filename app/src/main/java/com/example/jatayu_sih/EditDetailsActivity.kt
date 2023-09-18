@@ -1,5 +1,6 @@
 package com.example.jatayu_sih
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,15 +30,22 @@ class EditDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_details)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.statusBarColor = resources.getColor(R.color.white, theme)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = resources.getColor(R.color.white)
+        }
         etSurviveurs=findViewById(R.id.etSurviversDataFill)
         etInjured=findViewById(R.id.etInjuredDataFill)
         etCasualities=findViewById(R.id.etCasualitiesDataFill)
+        etEstimatedAfectees=findViewById(R.id.etEstimatedAfffectiesDataFill)
         spinner=findViewById(R.id.etSeverityLevelDataFill)
         btnAdd=findViewById(R.id.btnAdd)
 
         val spinnerSeverity=arrayOf("0","1","2")
         val arrayAdp= ArrayAdapter(this@EditDetailsActivity,android.R.layout.simple_spinner_dropdown_item,spinnerSeverity)
         spinner.adapter=arrayAdp
+
 
         prefs = loginStatus(this)
         //val isLoggedIn = prefs.isLoggedIn
@@ -57,6 +65,7 @@ class EditDetailsActivity : AppCompatActivity() {
             val survivors = etSurviveurs.text.toString()
             val injured = etInjured.text.toString()
             val casualties = etCasualities.text.toString()
+            val estemiated= etEstimatedAfectees.text.toString()
 
             val selectedSeverity = spinner.selectedItem.toString()
 
@@ -69,18 +78,13 @@ class EditDetailsActivity : AppCompatActivity() {
             requestData.put("status", "pending")
             requestData.put("estimatedAffectees", 0)
 
-            requestData.put("senderId", "${team}")
-            requestData.put("receiverId", "${organisation}")
-            requestData.put("teamId", "${team}")
-            requestData.put("message", "Disaster Alert")
-            requestData.put("status", "pending")
-            requestData.put("estimatedAffectees", 0)
 
             val updateData = JSONObject()
             updateData.put("survivors", survivors)
             updateData.put("injured", injured)
             updateData.put("casualties", casualties)
             updateData.put("severityLevel", selectedSeverity)
+            updateData.put("estimated affectees",estemiated)
             requestData.put("updateData", updateData)
 
             // Send requestData to the server via WebSocket
@@ -93,6 +97,8 @@ class EditDetailsActivity : AppCompatActivity() {
 
                     val gson = Gson()
                     val responseData = gson.fromJson(response.toString(),ResponseData::class.java)
+
+
                     Toast.makeText(this,"Request sent",Toast.LENGTH_SHORT).show()
                     Log.d(TAG,"Request sent")
 
