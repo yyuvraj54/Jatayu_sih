@@ -75,7 +75,7 @@ class SessionViewActivity : AppCompatActivity() {
 //        window.insetsController?.hide(WindowInsets.Type.statusBars())
 
         // Hide the status bar
-        window.insetsController?.hide(WindowInsets.Type.statusBars())
+
 
         // Hide the status bar and make your app full-screen
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {

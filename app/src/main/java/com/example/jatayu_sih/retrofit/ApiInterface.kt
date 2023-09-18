@@ -1,6 +1,7 @@
 package com.example.jatayu_sih.retrofit
 
 import com.example.jatayu_sih.User
+import com.example.jatayu_sih.apiModelCall.NotificationResponse
 import com.example.jatayu_sih.apiModelCall.SessionResponse
 import com.example.jatayu_sih.apiModelCall.UserLogin
 import com.example.jatayu_sih.apiModelCall.UserLoginResponse
@@ -19,6 +20,11 @@ interface ApiInterface {
         @Body userLogin: UserLogin?
     ): Call<UserLoginResponse?>?
 
-    @GET("employee/sessions/byTeam/{teamId}")
-    fun getSessionsByTeamId(@Path("teamId") teamId: String): Call<SessionResponse>
+    @GET("employee/sessions/getCurrent/{teamId}")
+    fun getCurrentSessionByTeamId(@Path("teamId") teamId: String): Call<SessionResponse>
+
+
+    @GET("/getAllRequestsByTeamId/{teamId}")
+    fun getAllRequestsByTeamId(@Path("teamId") teamId: String): Call<NotificationResponse>
+
 }

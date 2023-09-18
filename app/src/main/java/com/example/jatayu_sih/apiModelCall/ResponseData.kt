@@ -11,5 +11,6 @@ data class Data2(
 
 data class Request(
     val createdAt: String,
-    val teamId: String
+    val teamId: String,
+    val estimatedAffectees:Int
 )

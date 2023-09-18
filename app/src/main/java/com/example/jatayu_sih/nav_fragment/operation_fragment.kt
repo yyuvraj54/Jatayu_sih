@@ -63,6 +63,19 @@ class operation_fragment : Fragment() {
 
 
 
+
+        prefs = loginStatus(requireContext())
+        //val isLoggedIn = prefs.isLoggedIn
+        val userId = prefs.userId
+        val username = prefs.username.toString()
+        val password = prefs.password.toString()
+        val token = prefs.token.toString()
+        val userRole = prefs.userRole.toString()
+        val team = prefs.team.toString()
+        val organisation = prefs.organisation.toString()
+
+
+
         val view=inflater.inflate(R.layout.fragment_operation_fragment, container, false)
 
         val notifybtn= view.findViewById<Button>(R.id.notifyOrgbtn)
@@ -79,63 +92,15 @@ class operation_fragment : Fragment() {
 
 
 
-        prefs = loginStatus(requireContext())
-        //val isLoggedIn = prefs.isLoggedIn
-        val userId = prefs.userId
-        val username = prefs.username.toString()
-        val password = prefs.password.toString()
-        val token = prefs.token.toString()
-        val userRole = prefs.userRole.toString()
-        val team = prefs.team.toString()
-        val organisation = prefs.organisation.toString()
 
 
-        SocketHandler.setSocket()
-        SocketHandler.establishConnection()
-        val socket = SocketHandler.getSocket()
 
-        notifybtn.setOnClickListener {
+
 
 
 
-                val requestData = JSONObject()
-                requestData.put("senderId", "${team}")
-                requestData.put("receiverId", "${organisation}")
-                requestData.put("teamId", "${team}")
-                requestData.put("message", "Disaster Alert")
-                requestData.put("status", "pending")
-                requestData.put("estimatedAffectees", 0)
-
-                val locationData = JSONObject()
-                locationData.put("long", "${long.toString()}")
-                locationData.put("lat", "${lat.toString()}")
-                locationData.put("radius", 50)
-                requestData.put("location", locationData)
-
-
-                socket.emit("req-from-emp", requestData , Ack { args ->
-                    // Process the callback response here
-                    if (args.isNotEmpty()) {
-                        val response = args[0] // Assuming the response is the first argument
-                        println("Received response: $response")
-                        Log.d("SocketIO", "Received response: $response")
-
-                        val gson = Gson()
-                        val responseData = gson.fromJson(response.toString(), ResponseData::class.java)
-
-
-                        val createdAt = responseData.data.request.createdAt
-                        val teamId = responseData.data.request.teamId
-                        teamidtext.text="teamId: "+teamId
-                        createftext.text="createdAt: "+createdAt
-
-                    }
-                })
-
-            socket.on("req-from-emp", onResponse)
-
-
-            }
+        notifybtn.setOnClickListener {
+                                            }
 
 //        open sessions card view
         val textview=view.findViewById<TextView>(R.id.textView3)
@@ -189,21 +154,7 @@ class operation_fragment : Fragment() {
 //    location?.let { CameraUpdateFactory.newLatLng(it) }?.let { googleMap.moveCamera(it) }
 //}
 
-    private fun requestLocationUpdates() {
-        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return
-        }
-        fusedLocationClient.lastLocation
-            .addOnSuccessListener { location ->
-                if (location != null) {
-                    lat = location.latitude
-                    long = location.longitude
-                }
-            }
-            .addOnFailureListener { e ->
-                Log.d("location_for-lat-Long","${e.message}")
-            }
-    }
+
 
 
 }

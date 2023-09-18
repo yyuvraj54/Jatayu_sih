@@ -31,17 +31,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/noti_imageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="0"
-                        android:src="@drawable/person_4_24" />
-
                     <TextView
                         android:id="@+id/noti_title"
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="10dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Title" />
@@ -50,11 +43,17 @@
                 <TextView
                     android:id="@+id/noti_desc"
                     android:layout_width="wrap_content"
-                    android:padding="10dp"
+                    android:paddingVertical="10dp"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
 
                     android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available." />
+
+                <TextView
+                    android:id="@+id/noti_createdOn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DATE" />
             </LinearLayout>
         </LinearLayout>
 

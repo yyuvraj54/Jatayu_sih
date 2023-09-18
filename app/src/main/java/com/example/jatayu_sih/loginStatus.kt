@@ -15,11 +15,30 @@ class loginStatus (context: Context) {
     private val KEY_USER_ROLE = "userRole"
     private val KEY_TEAM = "team"
     private val KEY_ORGANISATION = "organisation"
+    private val KEY_SESSIONS_ID = "sessionsid"
+    private val KEY_ESTIMATED_AFFECTEES = "estimatedAffectees"
+    private val KEY_LONG = "long"
+    private val KEY_LAT = "lat"
 
 
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
 
+    var lat: String?
+        get() = sharedPreferences.getString(KEY_LAT, null)
+        set(value) = sharedPreferences.edit().putString(KEY_LAT, value).apply()
+
+    var sessionsId: String?
+        get() = sharedPreferences.getString(KEY_SESSIONS_ID, null)
+        set(value) = sharedPreferences.edit().putString(KEY_SESSIONS_ID, value).apply()
+
+    var estimatedAffectees: Int
+        get() = sharedPreferences.getInt(KEY_ESTIMATED_AFFECTEES, 0)
+        set(value) = sharedPreferences.edit().putInt(KEY_ESTIMATED_AFFECTEES, value).apply()
+
+    var long: String?
+        get() = sharedPreferences.getString(KEY_LONG, null)
+        set(value) = sharedPreferences.edit().putString(KEY_LONG, value).apply()
     var team: String?
         get() = sharedPreferences.getString(KEY_TEAM, null)
         set(value) = sharedPreferences.edit().putString(KEY_TEAM, value).apply()
