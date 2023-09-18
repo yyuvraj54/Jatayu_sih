@@ -137,21 +137,6 @@ class operation_fragment : Fragment() {
 
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //        open sessions card view
         val textview=view.findViewById<TextView>(R.id.textView3)
         textview.setOnClickListener {
