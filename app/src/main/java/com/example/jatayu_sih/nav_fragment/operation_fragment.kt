@@ -73,20 +73,28 @@ class operation_fragment : Fragment() {
         val userRole = prefs.userRole.toString()
         val team = prefs.team.toString()
         val organisation = prefs.organisation.toString()
+        val sessionid = prefs.sessionsId.toString()
+
+
 
 
 
         val view=inflater.inflate(R.layout.fragment_operation_fragment, container, false)
 
         val notifybtn= view.findViewById<Button>(R.id.notifyOrgbtn)
+        val Sessectioncard= view.findViewById<CardView>(R.id.SessectioncardBtn)
 
 
         val teamidtext=view.findViewById<TextView>(R.id.teamid)
+        val sesseion=view.findViewById<TextView>(R.id.tvsesstionid)
         val createftext=view.findViewById<TextView>(R.id.createdat)
+        val title=view.findViewById<TextView>(R.id.tvtitle)
+        val subtitle=view.findViewById<TextView>(R.id.tvsubtitle)
 
-//
-//        val supportMapFragment= childFragmentManager.findFragmentById(R.id.google_map) as SupportMapFragment
-//        supportMapFragment.getMapAsync { googleMap: GoogleMap -> }
+
+        sesseion.text="sesseion: "+sessionid
+        teamidtext.text="team: "+team
+
 
 
 
@@ -100,11 +108,16 @@ class operation_fragment : Fragment() {
 
 
         notifybtn.setOnClickListener {
-                                            }
+
+            Sessectioncard.visibility=View.VISIBLE
+            title.text="Current Running Sessions"
+            subtitle.text="Tap on sessions to update your information"
+
+        }
 
 //        open sessions card view
-        val textview=view.findViewById<TextView>(R.id.textView3)
-        textview.setOnClickListener {
+
+        Sessectioncard.setOnClickListener {
             val intent= Intent(activity,SessionViewActivity::class.java)
             val intents=Intent(requireContext(), LocationService::class.java).apply {
                 action = LocationService.ACTION_START

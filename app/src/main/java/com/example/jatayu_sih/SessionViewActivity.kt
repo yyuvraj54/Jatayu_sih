@@ -6,6 +6,7 @@ import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
@@ -37,6 +38,12 @@ import java.util.Locale
 
 class SessionViewActivity : AppCompatActivity() {
     private lateinit var imageAdd: ImageButton
+    private lateinit var tvSurviversData: TextView
+    private lateinit var tvEstimatedAfffectiesData: TextView
+    private lateinit var tvInjuredData: TextView
+    private lateinit var tvCasualitiesData: TextView
+    private lateinit var tvSeverityLevelData: TextView
+
     private lateinit var floatingButton: FloatingActionButton
     private lateinit var uploadButton: TextView
     private lateinit var fbEditButton: FloatingActionButton
@@ -55,22 +62,59 @@ class SessionViewActivity : AppCompatActivity() {
     var image:String?=null
     private var organisationId: String? = null
 
-    override fun onDestroy() {
-        super.onDestroy()
 
+    override fun onResume() {
+        super.onResume()
         prefs = loginStatus(this@SessionViewActivity)
         val userId = prefs.userId
+        val surviver = prefs.survivors.toString()
+        val injured = prefs.injured.toString()
+        val Estimated = prefs.estimatedAffectees.toString()
+        val casualities = prefs.casualties.toString()
+        val severity = prefs.severity.toString()
+
+
+        tvSurviversData =findViewById<TextView>(R.id.tvSurviversData)
+        tvInjuredData =findViewById<TextView>(R.id.tvInjuredData)
+        tvEstimatedAfffectiesData =findViewById<TextView>(R.id.tvEstimatedAfffectiesData)
+        tvCasualitiesData =findViewById<TextView>(R.id.tvCasualitiesData)
+        tvSeverityLevelData =findViewById<TextView>(R.id.tvSeverityLevelData)
+
+        tvSurviversData.text=surviver
+        tvInjuredData.text=injured
+        tvEstimatedAfffectiesData.text=Estimated
+        tvCasualitiesData.text=casualities
+        tvSeverityLevelData.text=severity
+
+
+
+
+    }
+
+        override fun onDestroy() {
+        super.onDestroy()
+        prefs = loginStatus(this@SessionViewActivity)
+        val userId = prefs.userId
+
+
+
         val intent=Intent(this@SessionViewActivity, LocationService::class.java).apply { action = LocationService.ACTION_STOP }
         intent.putExtra("troopId", "${userId}")
         startService(intent)
 
     }
+
+
+
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setContentView(R.layout.activity_session_view)
+
+
+
+
+
 //        // Hide the status bar
 //        window.insetsController?.hide(WindowInsets.Type.statusBars())
 

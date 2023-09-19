@@ -62,12 +62,24 @@ class EditDetailsActivity : AppCompatActivity() {
         val socket = SocketHandler.getSocket()
 
         btnAdd.setOnClickListener {
-            val survivors = etSurviveurs.text.toString()
+
+
+
+
+
+            val survivor = etSurviveurs.text.toString()
             val injured = etInjured.text.toString()
             val casualties = etCasualities.text.toString()
             val estemiated= etEstimatedAfectees.text.toString()
 
             val selectedSeverity = spinner.selectedItem.toString()
+
+            prefs.survivors=survivor
+            prefs.injured=injured
+            prefs.casualties=casualties
+            prefs.severity=selectedSeverity
+            prefs.estimatedAffectees=estemiated
+
 
 
             val requestData = JSONObject()
@@ -80,7 +92,7 @@ class EditDetailsActivity : AppCompatActivity() {
 
 
             val updateData = JSONObject()
-            updateData.put("survivors", survivors)
+            updateData.put("survivors", survivor)
             updateData.put("injured", injured)
             updateData.put("casualties", casualties)
             updateData.put("severityLevel", selectedSeverity)
@@ -99,7 +111,7 @@ class EditDetailsActivity : AppCompatActivity() {
                     val responseData = gson.fromJson(response.toString(),ResponseData::class.java)
 
 
-                    Toast.makeText(this,"Request sent",Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this,"Request sent",Toast.LENGTH_SHORT).show()
                     Log.d(TAG,"Request sent")
 
                 }

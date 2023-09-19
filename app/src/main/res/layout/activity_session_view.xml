@@ -41,10 +41,10 @@
             android:id="@+id/tvSurviversData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="87654"
-            android:textSize="16sp"
             android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:text="87654"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvInjured"
@@ -127,10 +127,11 @@
             android:id="@+id/fbEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/edit_12"
-            android:backgroundTint="@color/primary_color"
             android:layout_marginStart="315dp"
-            android:layout_marginTop="160dp"/>
+            android:layout_marginTop="160dp"
+            android:backgroundTint="@color/primary_color"
+            android:src="@drawable/edit_12"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.cardview.widget.CardView>
 
@@ -154,29 +155,32 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal">
-    <ImageButton
-        android:id="@+id/ibImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/img_13"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"/>
+
+           <ImageButton
+               android:id="@+id/ibImage"
+               android:layout_width="80dp"
+               android:layout_height="80dp"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="10dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/img_13"
+               tools:ignore="SpeakableTextPresentCheck" />
 
            <com.google.android.material.floatingactionbutton.FloatingActionButton
                android:id="@+id/floatingActionButton"
                android:layout_width="35dp"
                android:layout_height="35dp"
                android:layout_gravity="bottom|end"
+               android:layout_marginStart="-30dp"
+               android:backgroundTint="@color/white"
                android:clickable="true"
                app:fabCustomSize="35dp"
-               android:layout_marginStart="-30dp"
                app:layout_constraintBottom_toBottomOf="@id/ibImage"
                app:layout_constraintEnd_toEndOf="@id/ibImage"
                app:layout_constraintStart_toStartOf="@id/ibImage"
                app:layout_constraintTop_toTopOf="@id/ibImage"
                app:srcCompat="@drawable/ic_camera"
-               android:backgroundTint="@color/white"/>
+               tools:ignore="SpeakableTextPresentCheck" />
 
            <LinearLayout
                android:layout_width="wrap_content"
@@ -212,10 +216,11 @@
                android:id="@+id/ibNeedMoreAssistance"
                android:layout_width="80dp"
                android:layout_height="80dp"
-               android:src="@drawable/img_14"
-               android:scaleType="centerCrop"
                android:layout_marginStart="10dp"
-               android:layout_marginTop="10dp"/>
+               android:layout_marginTop="10dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/img_14"
+               tools:ignore="SpeakableTextPresentCheck" />
 
            <LinearLayout
                android:layout_width="wrap_content"
@@ -253,11 +258,12 @@
                android:id="@+id/ibAddArea"
                android:layout_width="80dp"
                android:layout_height="80dp"
-               android:src="@drawable/img_15"
-               android:scaleType="centerCrop"
-               app:layout_constraintStart_toEndOf="@+id/ibNeedMoreAssistance"
                android:layout_marginStart="10dp"
-               android:layout_marginTop="10dp"/>
+               android:layout_marginTop="10dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/img_15"
+               app:layout_constraintStart_toEndOf="@+id/ibNeedMoreAssistance"
+               tools:ignore="SpeakableTextPresentCheck" />
 
            <LinearLayout
                android:layout_width="wrap_content"

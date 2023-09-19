@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
                 val createdAt = responseData.data.request.createdAt
                 val teamId = responseData.data.request.teamId
                 val estimatedAffectees = responseData.data.request.estimatedAffectees
-                prefs.estimatedAffectees=estimatedAffectees
+                prefs.estimatedAffectees=estimatedAffectees.toString()
 
             }
         })
