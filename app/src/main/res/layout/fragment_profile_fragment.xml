@@ -10,7 +10,7 @@
         android:id="@+id/profileimg"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:src="@drawable/img_21"
+        android:src="@drawable/user"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
@@ -21,23 +21,24 @@
         android:id="@+id/tvOrganisationtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Organisation ID : "
-        android:layout_marginStart="60dp"
+        android:text="Username : "
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/profileimg"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
 
     <TextView
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/tvOrganisationtext"
         android:hint="1234"
         android:textSize="20sp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/profileimg"/>
 
@@ -45,8 +46,8 @@
         android:id="@+id/tvTrooptext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Troop ID : "
-        android:layout_marginStart="60dp"
+        android:text="User ID : "
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/tvOrganisationtext"
         android:layout_marginTop="20dp"
@@ -54,6 +55,7 @@
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/userId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/tvOrganisationtext"
