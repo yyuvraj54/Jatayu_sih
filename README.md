@@ -62,6 +62,8 @@ The application helps in efficient resource allocation by providing a centralize
 
 ## 📸 Screenshots
 
+![Solution](https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/841cad8f-f823-4f28-9d2b-e79403c0f2e6)
+
 <div style="overflow-x: auto; white-space: nowrap;">
   <img src="https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/725465df-a717-496b-b96a-9ed3102943c9" width="140">
 <img src="https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/bc461c7e-bc48-41a6-b3f9-5ff00a14614d" width="140">
