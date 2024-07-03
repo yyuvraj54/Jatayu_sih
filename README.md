@@ -88,6 +88,7 @@ The application helps in efficient resource allocation by providing a centralize
 <table>
   <tbody><tr>
     <td align="center"><a href="https://github.com/yyuvraj54"><img alt="" src="https://avatars.githubusercontent.com/yyuvraj54" width="100px;"><br><sub><b>Yuvraj Singh </b></sub></a></td>
+    <td align="center"><a href="https://github.com/Nevish-302"><img alt="" src="https://avatars.githubusercontent.com/Nevish-302" width="100px;"><br><sub><b>Shiven upadhyay </b></sub></a></td>
     <td align="center"><a href="https://github.com/vibhuti2201"><img alt="" src="https://avatars.githubusercontent.com/vibhuti2201" width="100px;"><br><sub><b>Vibhuti Kapoor </b></sub></a></td>
   </tr>
 </tbody></table>
