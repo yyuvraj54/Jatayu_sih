@@ -2,7 +2,7 @@
 
 An application under which all rescue agencies are registered and which can display the location of other rescue relief agencies during natural/man-made calamities.
 
-![Solution](https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/358a87c5-2748-4558-8143-930a85b43305)
+![Solution](https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/620d028d-61a8-40bd-ba84-c83e78675bda)
 
 ## 🎯 Problem it Solves!
 
@@ -81,3 +81,18 @@ The application helps in efficient resource allocation by providing a centralize
 <img src="https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/a1a4b679-3d54-4b62-a9d9-01769cd7e129" width="140">
 <img src="https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/db659366-1dc2-4a23-858f-f8aa703c7a16" width="140">
 </div>
+
+## Developers✨
+
+
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://github.com/yyuvraj54"><img alt="" src="https://avatars.githubusercontent.com/yyuvraj54" width="100px;"><br><sub><b>Yuvraj Singh </b></sub></a></td>
+    <td align="center"><a href="https://github.com/vibhuti2201"><img alt="" src="https://avatars.githubusercontent.com/vibhuti2201" width="100px;"><br><sub><b>Vibhuti Kapoor </b></sub></a></td>
+  </tr>
+</tbody></table>
+
+![Uses Git](https://forthebadge.com/images/badges/uses-git.svg)
+![ForTheBadge ANDROID](https://forthebadge.com/images/badges/built-for-android.svg)
+![Built with love](https://forthebadge.com/images/badges/built-with-love.svg)
+![Built By Developers](https://forthebadge.com/images/badges/built-by-developers.svg)
