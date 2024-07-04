@@ -82,6 +82,9 @@ The application helps in efficient resource allocation by providing a centralize
 <img src="https://github.com/vibhuti2201/Jatayu_sih/assets/30363687/db659366-1dc2-4a23-858f-f8aa703c7a16" width="140">
 </div>
 
+## 📥 Download
+You can download the app from [Mega](https://mega.nz/file/uNUiSAYI#Xvoc2UpGAA-9kP8fwjuVyh79aGCVxTLhoadkW2bY0ZM).
+
 ## Developers✨
 
 
